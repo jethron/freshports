@@ -22,6 +22,7 @@
   }
 
   location ~ \.php$ {
+    rewrite ^/ports-(watch|broken|deleted|deprecated|expiration-date|expired|forbidden|ignore|interactive|new|no-cdrom|restricted|vulnerable)\.php /ports-status.php?status=$1;
     include /usr/local/www/freshports/configuration/php-processing.conf;
   }
 
