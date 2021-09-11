@@ -336,6 +336,10 @@ input[type="image"], .watchlist-selector select {
 
 IMG#fp-logo { max-width: 100%; height: auto }
 
+pre, code, kbd {
+  font-family: "Lucida Console", monospace;
+}
+
 CODE.code, kbd.code {
   color: #461b7e;
   color: var(--code-text);
@@ -350,7 +354,7 @@ PRE.code {
 .like-pre {
   color: #461b7e;
   color: var(--code-text);
-  font-family: monospace;
+  font-family: "Lucida Console", monospace;
   white-space: pre-wrap;
   word-break: break-all;
   margin-top: 15px;
@@ -361,7 +365,7 @@ PRE.code {
 .configure > li, .pkg-plist  > li {
     color: #461b7e;
     color: var(--code-text);
-    font-family: monospace;
+    font-family: "Lucida Console", monospace;
 }
 
 
@@ -369,13 +373,13 @@ LI.configure {
     color: #461b7e;
     color: var(--code-text);
     display: block;
-    font-family: monospace;
+    font-family: "Lucida Console", monospace;
 }
 
 li#configureplist-Extra {
     color: #461b7e;
     color: var(--code-text);
-    font-family: monospace;
+    font-family: "Lucida Console", monospace;
     padding-inline-start: 0px;
 }
 BLOCKQUOTE.code {
@@ -505,11 +509,11 @@ span.fp_description_short
 
 span.file {
     color: #007a00;
-    font-family: monospace;
+    font-family: "Lucida Console", monospace;
 }
 
 a.hash {
-    font-family: monospace;
+    font-family: "Lucida Console", monospace;
 }
 
 a.showLink, a.hideLink {
@@ -618,7 +622,7 @@ td.version:hover::after, td.version:focus::after {
   padding: .5em;
   border: 1px solid black;
   border: 1px solid var(--body-text);
-  font-family: monospace;
+  font-family: "Lucida Console", monospace;
   text-align: left;
   white-space: pre;
   background-color: white;
