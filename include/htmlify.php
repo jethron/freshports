@@ -37,9 +37,9 @@ function mail2link($Arr) {
 	# the browser.
 	#
 
-	$addr = $Arr[0];
+	$addr = $Arr[2];
 
-	$addr = "<A HREF=\"mailto:$addr\">$addr</A>";
+	$addr = $Arr[1] . "<A HREF=\"mailto:$addr\">$addr</A>";
 
 	return $addr;
 }
@@ -94,9 +94,9 @@ function htmlify($String, $Process_PRs = false) {
 
 	$String = preg_replace_callback("/((http|ftp|https):\/\/.*?)($delimiters)/i",                    'url2link',    $String);
 	$String = preg_replace_callback("/(<a href=(\"|')(http|ftp|https):\/\/.*?)(\">|'>)(.*?)<\/a>/i", 'url_shorten', $String);
-	$String = preg_replace_callback("/([\w+=\-.!]+@[\w\-]+(\.[\w\-]+)+)/",                           'mail2link',   $String);
+	$String = preg_replace_callback("/(^|\s|&lt;|&#63;)([\w+=\-.!]+@[\w\-]+(\.[\w\-]+)+)/",          'mail2link',   $String);
 	if ($Process_PRs) {
-		$String = preg_replace_callback("/\bPR[:\#]?\s*(\d+)([,\s\nand]*(\d+))*/",                      'pr2link',     $String);
+		$String = preg_replace_callback("/\bPR[:\#]?\s*(\d+)([,\s\nand]*(\d+))*/",               'pr2link',     $String);
 		$String = preg_replace_callback("/[\w\s]+((advocacy|alpha|bin|conf|docs|gnu|i386|ia64|java|kern|misc|ports|powerpc|sparc64|standards|www)\/\d+)/", 'pr2link', $String);
 	}
 
